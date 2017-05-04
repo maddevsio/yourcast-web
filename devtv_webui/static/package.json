@@ -1,0 +1,20 @@
+{
+  "name": "yourcast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "m1rotvorez",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "cssnano": "^3.8.2",
+    "cssnext": "^1.8.4",
+    "gulp-install": "^0.6.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^3.0.0",
+    "precss": "^1.4.0"
+  }
+}

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load staticfiles i18n %}
+{% block content %}
+
+<main class="main_container">
+    <header>
+        <a href="/" class="logotype">
+            <svg class="loading-cover__dl-symbol">
+                <defs>
+                    <radialGradient id="colors" x1="0" y1="0" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#ff004e" stop-opacity=".8">
+                            <animate attributeName="stop-color"
+                                     values="#F8FC27;#FCF627;#FCEC27;#FCE227;#FCD828;#FCCE28;#FCC528;#FCBB29;#FCB129;#FCA829;#FC9E2A;#FC952A;#FC8B2A;#FC812A;#FC782B;#FC6E2B;#FC652B;#FC5C2C;#FC522C;#FC492C;#FC3F2D;#FC362D;#FC2D2D;#FC2D37;#FC2E41;#FC2E4B;#FC2E55;#FC2F5F;#FC2F68;#FC2F72;#FC307C;#FC3085;#FC308F;#FC3099;#FC31A2;#FC31AC;#FC31B5;#FC32BF;#FC32C8;#FC32D2;#FC33DB;#FC33E4;#FC33EE;#FC33F7;#F834FC;#EF34FC;#E534FC;#DC35FC;#D335FC;#CA35FC;#C136FC;#B836FC;#AF36FC;#A636FC;#9C37FC;#9337FC;#8B37FC;#8238FC;#7938FC;#7038FC;#6739FC;#5E39FC;#5539FC;#4C3AFD;#5539FC;#5E39FC;#6739FC;#7038FC;#7938FC;#8238FC;#8B37FC;#9337FC;#9C37FC;#A636FC;#AF36FC;#B836FC;#C136FC;#CA35FC;#D335FC;#DC35FC;#E534FC;#EF34FC;#F834FC;#FC33F7;#FC33EE;#FC33E4;#FC33DB;#FC32D2;#FC32C8;#FC32BF;#FC31B5;#FC31AC;#FC31A2;#FC3099;#FC308F;#FC3085;#FC307C;#FC2F72;#FC2F68;#FC2F5F;#FC2E55;#FC2E4B;#FC2E41;#FC2D37;#FC2D2D;#FC362D;#FC3F2D;#FC492C;#FC522C;#FC5C2C;#FC652B;#FC6E2B;#FC782B;#FC812A;#FC8B2A;#FC952A;#FC9E2A;#FCA829;#FCB129;#FCBB29;#FCC528;#FCCE28;#FCD828;#FCE227;#FCEC27;#FCF627;#F8FC27;"
+                                     dur="1.5s" repeatCount="indefinite"/>
+                        </stop>
+                        <stop offset="100%" stop-color="#363b4b"/>
+                    </radialGradient>
+                    <radialGradient id="static_color" x1="0" y1="0" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#ff004e"/>
+                        <stop offset="100%" stop-color="#363b4b"/>
+                    </radialGradient>
+                </defs>
+                <clipPath id="logo-path">
+                    <path class="st2" d="M208,16.5V3.1c0-2.4,2.6-3.9,4.6-2.7L243,17.9l-5.3,11.6h-0.2l-5.7-12.7c-0.1-0.2-0.3-0.4-0.6-0.4h-0.9h-3.7
+                    H208V16.5z M227.9,21.6h-7.3v18.6c0,0.3-0.3,0.7-0.7,0.7h-4.2c-0.3,0-0.7-0.3-0.7-0.7V21.6h-7v27.7c0,2.4,2.6,3.9,4.6,2.7
+                    l23.1-13.3L227.9,21.6z M252.6,23.5l-4.9-2.8l-7,15.1l12-6.9C254.7,27.7,254.7,24.7,252.6,23.5z"/>
+                    <path class="st2" d="M96.8,23.2c0-3.6-3-6.6-6.7-6.6H81c-0.3,0-0.6,0.3-0.6,0.6v20.3c0,0.3,0.2,0.6,0.6,0.6h3.6
+                    c0.3,0,0.6-0.3,0.6-0.6v-7.8h2.1l4.1,8.1c0.1,0.1,0.2,0.3,0.5,0.3H96c0.5,0,0.7-0.5,0.5-0.9l-4.2-7.8C94.9,28.2,96.8,26,96.8,23.2z
+                     M89.7,25.7h-4.5v-4.8h4.5c1.3,0,2.3,1,2.3,2.3S91,25.7,89.7,25.7z M195.2,17.1v3.4c0,0.3-0.3,0.6-0.6,0.6h-4.5V38
+                    c0,0.3-0.3,0.6-0.6,0.6h-3.8c-0.3,0-0.6-0.3-0.6-0.6V21.2h-4.5c-0.3,0-0.6-0.3-0.6-0.6v-3.4c0-0.3,0.3-0.6,0.6-0.6h14
+                    C195,16.5,195.2,16.8,195.2,17.1z M110.4,27.8c0,3.5,2.6,6.4,6.2,6.4c1.5,0,3.1-0.5,4.2-1.5c0.2-0.2,0.6-0.2,0.8,0l2.5,2.6
+                    c0.2,0.2,0.2,0.6,0,0.8c-2.1,2.1-4.8,3.1-7.6,3.1c-6.3,0-11.4-5-11.4-11.3s5.1-11.4,11.4-11.4c3.1,0,5.5,1,7.6,2.9
+                    c0.3,0.3,0.3,0.6,0,0.9l-2.5,2.5c-0.2,0.2-0.6,0.2-0.8,0c-1.2-1-2.7-1.6-4.2-1.6C113,21.3,110.4,24.3,110.4,27.8z M18.5,17.4
+                    l-6.9,10.2v9.8c0,0.3-0.3,0.6-0.6,0.6H7.4c-0.3,0-0.6-0.3-0.6-0.6v-9.7L0.1,17.4c-0.2-0.4,0-0.9,0.5-0.9h4c0.2,0,0.4,0.2,0.5,0.3
+                    l4.3,6.3l4.3-6.3c0.1-0.1,0.2-0.3,0.5-0.3h4C18.5,16.5,18.8,17,18.5,17.4z M141.1,16.9c-0.1-0.2-0.3-0.3-0.5-0.3h-0.3
+                    c-0.2,0-0.4,0.2-0.5,0.3L130,38.1c-0.2,0.4,0.1,0.8,0.5,0.8h3.5c0.6,0,1-0.4,1.1-0.8l1.1-2.5h8.6l1.1,2.5c0.3,0.6,0.5,0.8,1.1,0.8
+                    h3.5c0.5,0,0.7-0.4,0.5-0.8L141.1,16.9z M138.1,31.3l2.4-5.2l0,0l2.4,5.2H138.1z M35.8,16.5c-6.1,0-11,4.9-11,11.1
+                    c0,6.1,4.9,11,11,11s11-4.9,11-11S41.9,16.5,35.8,16.5z M35.8,33.7c-3.3,0-6.1-2.8-6.1-6.1c0-3.4,2.8-6.2,6.1-6.2
+                    c3.4,0,6.1,2.8,6.1,6.2C41.9,30.9,39.1,33.7,35.8,33.7z M70.8,17.1v12.6c0,4.7-3.9,8.5-8.8,8.5c-4.8,0-8.7-3.9-8.7-8.5V17.1
+                    c0-0.3,0.3-0.6,0.6-0.6h3.8c0.3,0,0.6,0.3,0.6,0.6v12.4c0,2.1,1.6,3.9,3.8,3.9c2.2,0,3.8-1.7,3.8-3.9V17.1c0-0.3,0.2-0.6,0.6-0.6
+                    h3.8C70.6,16.5,70.8,16.8,70.8,17.1z M172.1,32.7c0,3.2-2.8,6.5-7.4,6.5c-4.1,0-6.4-1.7-7.1-2.4c-0.3-0.3-0.4-0.4-0.2-0.9l1.5-2.6
+                    c0.3-0.4,0.9-0.3,1.1-0.2c0.1,0.1,2.4,1.7,4.5,1.7c1.3,0,2.2-0.8,2.2-1.9c0-1.3-1.1-2.3-3.2-3.2c-2.7-1.1-6.1-3.2-6.1-7
+                    c0-3.1,2.4-6.3,7.3-6.3c3.3,0,5.8,1.7,6.7,2.4c0.4,0.2,0.3,0.8,0.2,1l-1.6,2.4c-0.2,0.3-0.8,0.6-1.1,0.4s-2.6-1.9-4.5-1.9
+                    c-1.1,0-2,0.8-2,1.6c0,1.2,0.9,2,3.4,3.1C168.2,26.5,172.1,28.4,172.1,32.7z"/>
+                    <text transform="matrix(1 0 0 1 269 24)"
+                          style="font-family: 'Clean-Light', sans-serif; font-size: 18px">Create your own TV station
+                    </text>
+                    <text transform="matrix(1 0 0 1 269 44)"
+                          style="font-family: 'Clean-Light', sans-serif; font-size: 18px">or see others channels!
+                    </text>
+                </clipPath>
+                <g id="double" clip-path="url(#logo-path)" transform="scale(.75)">
+                    <rect class="second-rect" width="500" height="60" fill="#363b4b"></rect>
+                    <circle class="first-rect" cx="220" cy="30" r="130" fill="url(#colors)"></circle>
+                    <circle id="static_color_circle" class="third-rect" cx="220" cy="30" r="130"
+                            fill="url(#static_color)"></circle>
+                </g>
+            </svg>
+        </a>
+        <div class="single_cat_title"> {{ category.title }}</div>
+         <div class="search">
+            <form action="search" method="post" class="form_search">
+                <input class="search_term" type="text" >
+                <button class="form_search-button"></button>
+            </form>
+            <img class="search_button_hover" src="{% static 'images/icon_search.png' %}" alt="">
+        </div>
+    </header>
+    <section class="trend_cat">
+        <div class="single_cat_wrap">
+            {% for stream in streams %}
+            <a href="{% url 'stream_info' stream.pk %}" class="stream_cat_wrap_item">
+                <div class="item_images">
+                    <img src="{{ stream.img.url }}" alt="">
+                </div>
+                <div class="item_play">
+                    <img width="70px" height="70px" src="{% static 'images/icons/i__play.svg' %}" alt="">
+                </div>
+                <div class="item_title">{{stream.name}}</div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+{% endblock content %}

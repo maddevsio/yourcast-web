@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load staticfiles i18n %}
+{% block content %}
+
+<section class="player_stream coub" id="player_stream">
+    <div id="preloader">
+        Осторожно! Можно залипнуть!
+    </div>
+    <video id="player" class="video-js vjs-default-skin" width="600" height="300" >
+        <source src="{{ stream_url }}" type="application/x-mpegURL">
+    </video>
+    <div class="coub_copyright">
+        Это бесконечные коубы / Технология <a target="_blank" href="http://yourcast.tv/">YourCast.tv</a> / Сделано в <a target="_blank" href="http://maddevs.io/">MadDevs.io</a> / <a href="https://vk.com/svobodny_ot_zabot" rel="nofollow" target="_blank">&copy; Свободный от забот</a>
+    </div>
+    <div class="free_from_worry" id="free_from">
+        <div class="free_manny">
+            <div class="text">  </div>
+            <picture class="position_1 ">
+                <source srcset="{% static 'images/1.png'%}, {% static 'images/1@2x.png'%} 2x">
+                <img srcset="{% static 'images/1.png'%}, {% static 'images/1@2x.png'%} 2x" alt="My default image">
+            </picture>
+            <picture class="position_2">
+                <source srcset="{% static 'images/2.png'%}, {% static 'images/2@2x.png'%} 2x">
+                <img srcset="{% static 'images/2.png'%}, {% static 'images/2@2x.png'%} 2x" alt="My default image">
+            </picture>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+{% block javascript %}
+<script src="{% static 'js/videojs/dist/video.min.js' %}"></script>
+<script src="{% static 'js/hls.min.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script>
+
+jQuery(document).ready(function ($) {
+  $(window).load(function () {
+      setTimeout(function () {
+          $('#preloader').fadeOut('slow', function () {
+          });
+      }, 1500);
+  });
+});
+
+var freeFromWorry = $('.free_from_worry');
+var text = $('.text');
+var freeWorryFunction = function () {
+    var rand = Math.floor(Math.random() * arr.length);
+    text.text(arr[rand]);
+};
+
+var arr = [
+    "Свободный от забот %)",
+    "Отдых на 95% безопаснее, чем работа. Законом не запрещено, отдыхаю, где хочу",
+    "Слишком тяжело. До свидания",
+    "Обгомная просьба! Не мешайте мне ничего не делать. Я очень занят!!!",
+    "Сделаю это в следующем году",
+    "Вжух, день просран",
+    "Отлично! Работаем дальше",
+    "Мысленно в кроватке",
+    "Не могу сосредоточиться на работе",
+    "А правильно ли я нечего не делаю со своей жизнью?",
+    "Начальник, это ребята отдыхали, я просто рядом стоял",
+    "Даже созвездия двигаются, а ты нет",
+    "Ало, я сейчас не дома. Как буду у компа, сразу скину. Очень извиняюсь, что так получилось",
+    "Ало, я вчера был очень занят. в понедельник точно пришлю",
+    "Безделье это игрушка дьявола",
+    "Дома погуляю",
+    "Где макет?!",
+    "Мам, я не бездельник. Я стартапер",
+    "Всё тлен..."
+];
+
+freeFromWorry.mouseenter(freeWorryFunction);
+
+freeFromWorry.click(freeWorryFunction);
+
+var CURRENT_STREAM = 7;
+
+$(document).ready(function(e) {
+  if (typeof player !== 'undefined') {
+    console.warn("We have more than 1 player.Removing current")
+      player.dispose()
+  }
+  var player = videojs('#player', {
+    autoplay: true,
+    controls: true,
+    poster: '{{ stream.img.url }}',
+    fluid: true,
+    html5: {
+      hlsjsConfig: {
+        debug: true
+      }
+    }
+  });
+});
+</script>
+{% endblock %}
+

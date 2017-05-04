@@ -1,0 +1,17 @@
+{
+  "name": "jwplayer",
+  "version": "7.3.5",
+  "description": "JW Player is a the world's most popular embeddable media player",
+  "main": "jwplayer.js",
+  "keywords": [
+    "jwplayer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vn38minhtran/jwplayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vn38minhtran/jwplayer/issues"
+  },
+  "homepage": "https://github.com/vn38minhtran/jwplayer#readme"
+}

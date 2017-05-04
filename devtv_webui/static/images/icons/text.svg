@@ -1,0 +1,20 @@
+<svg  width="190" height="40">
+    <defs>
+        <linearGradient id="MyGradient" x1="0" y1="0" x2="100%" y2="0%"> <!--20% spreadMethod="repeat"-->
+          <stop offset="0%" stop-color="#dc143c" /><stop offset="40%" stop-color="#363342" />
+          <stop offset="40%" stop-color="#363342" /><stop offset="100%" stop-color="#333745" />
+        </linearGradient>
+
+        <pattern id="p-stripes"
+                 patternUnits="userSpaceOnUse"
+                 width="190" height="40"
+                 viewbox="0 0 190 40">
+          <rect width="190" height="40"
+                  fill="url(#MyGradient)"/>
+        </pattern>
+    </defs>
+    <text x="0" y="43%">
+        <tspan class="logo_text" fill="url(#p-stripes)" font-size="14px" x="10">Create your own TV station</tspan>
+        <tspan class="logo_text" fill="url(#p-stripes)" font-size="14px" x="10" dy="15">or see others channels!</tspan>
+    </text>
+</svg>
